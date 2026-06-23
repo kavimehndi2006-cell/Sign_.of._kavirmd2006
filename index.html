@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></Sign_>_kavirmd | Aari Work Designers & Mehndi Artist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:#111;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(212,175,55,.2);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Cinzel',serif;
+    font-size:28px;
+    color:#d4af37;
+    font-weight:bold;
+}
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #d4af37;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+
+.hero-content h1{
+    font-family:'Cinzel',serif;
+    font-size:4rem;
+    color:#d4af37;
+}
+
+.hero-content p{
+    margin:20px 0;
+    font-size:1.2rem;
+}
+
+.btn{
+    padding:15px 35px;
+    background:#d4af37;
+    color:#000;
+    border:none;
+    font-weight:600;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTION */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Cinzel',serif;
+    color:#d4af37;
+    margin-bottom:50px;
+    font-size:2.5rem;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#181818;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid rgba(212,175,55,.3);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+/* WHATSAPP BOOKING BUTTON */
+
+.whatsapp-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    margin-top:15px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    border:2px solid rgba(212,175,55,.4);
+    cursor:pointer;
+}
+
+.gallery-item img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.12);
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(0,0,0,0.1),
+        rgba(0,0,0,0.8)
+    );
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding-bottom:25px;
+    opacity:0;
+    transition:.4s;
+}
+
+.gallery-item:hover .overlay{
+    opacity:1;
+}
+
+.overlay h3{
+    color:#d4af37;
+    font-family:'Cinzel',serif;
+    font-size:24px;
+    letter-spacing:1px;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.box{
+    background:#181818;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid rgba(212,175,55,.3);
+}
+
+.box h2{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+/* TESTIMONIAL SLIDER */
+
+.testimonial-container{
+overflow:hidden;
+position:relative;
+width:100%;
+}
+
+.testimonial-slider{
+display:flex;
+gap:25px;
+width:max-content;
+animation:slideReviews 18s linear infinite;
+}
+
+.testimonial-card{
+min-width:320px;
+max-width:320px;
+background:#181818;
+border:1px solid rgba(212,175,55,.3);
+border-radius:20px;
+padding:25px;
+text-align:center;
+box-shadow:0 0 15px rgba(212,175,55,.15);
+}
+
+.testimonial-card h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.testimonial-card p{
+color:#ddd;
+line-height:1.7;
+}
+
+.testimonial-card strong{
+color:#d4af37;
+}
+
+@keyframes slideReviews{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:12px 0;
+    font-size:18px;
+}
+
+.contact a{
+    background:linear-gradient(
+        45deg,
+        #F58529,
+        #DD2A7B,
+        #8134AF,
+        #515BD4
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-weight:700;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:#aaa;
+}
+
+.success{
+    color:#4CAF50;
+    text-align:center;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  
+    <div class="logo">
+    <img src="SK logo.png" alt="Sign_.of._kavirmd Logo">
+    <span>Sign_.of._kavirmd</span>
+</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#whatsapp-booking">WhatsApp Booking</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1> Aari Work Designer & Mehndi Artist</h1>
+        <p>Sleeves Initial • Designer Aari Embroidery • Back Neck Monogram • Custom Creations</p>
+        <p>Bridal Mehndi • Mandala  • Indo-Arabic • Wedding Packages</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+    <h2 class="section-title"> Gallery</h2>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="12 .jpg" alt="Sleeve Initials">
+            <div class="overlay">
+                <h3>Sleeves Initial</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="13 .jpg" alt="Embroidery Aari Designs">
+            <div class="overlay">
+                <h3>Embroidery Aari Designs</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="14 .jpg" alt="Kundan Stone Aari Work Design">
+            <div class="overlay">
+                <h3>Kundan Stone Aari Work Design</h3>
+            </div>
+        </div>
+
+         <div class="gallery-item">
+            <img src="1 blose.jpeg" alt="Simple Design">
+            <div class="overlay">
+                <h3>Simple Design</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="1 Bridal .jpg" alt="Bride">
+            <div class="overlay">
+                <h3>Bridal Mehndi</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="3 Mandala.jpg" alt="Mandala">
+            <div class="overlay">
+                <h3>Mandala</h3>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="4 arabic.jpg" alt="Indo-Arabic">
+            <div class="overlay">
+                <h3>Indo-Arabic</h3>
+            </div>
+        </div>
+
+         <div class="gallery-item">
+            <img src="5 wedding.jpg" alt="Wedding Packages">
+            <div class="overlay">
+                <h3>Wedding Packages</h3>
+            </div>
+        </div> 
+        
+
+    </div>
+</section>
+
+<!-- WHATSAPP BOOKING BUTTON -->
+ 
+<section id="whatsapp-booking">
+<button onclick="bookNow()" class="btn">
+    Confirm Booking
+</button>
+
+<a href="https://wa.me/916369029091" class="btn"
+   style="display:block;text-align:center;margin-top:15px;">
+   Book via WhatsApp
+</a>
+
+<div id="msg" class="success"></div>
+</section>
+
+</body>
+
+</html>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+    <h2 class="section-title">Our Premium Services</h2>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Sleeve Initials</h3>
+            <p>Personalized sleeve initials for a touch of elegance.</p>
+        </div>
+
+        <div class="card">
+            <h3>Embroidery Aari Designs</h3>
+            <p>Exquisite hand-embroidered designs for a touch of luxury.</p>
+        </div>
+
+        <div class="card">
+            <h3>Kundan Stone Aari Work Design</h3>
+            <p>Stunning Kundan stone Aari work designs for a touch of opulence.</p>
+        </div>
+
+        <div class="card">
+            <h3>Simple Design</h3>
+            <p>Classic and timeless designs for a subtle yet elegant look.</p>
+        </div>
+
+         <div class="card">
+            <h3>Bridal Mehndi</h3>
+            <p>Exclusive bridal mehndi designs with premium detailing and luxury finishing.</p>
+        </div>
+
+        <div class="card">
+            <h3>Mandala</h3>
+            <p>Elegant mandala designs for a touch of artistry.</p>
+        </div>
+         
+        <div class="card">
+            <h3>Indo-Arabic</h3>
+            <p>Blending traditional Indian and Arabic designs for a unique look.</p>
+        </div>
+
+        <div class="card">
+            <h3>Wedding Packages</h3>
+            <p>Complete bridal beauty and embroidery packages tailored to your needs.</p>
+        </div>
+
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard">
+    <h2 class="section-title">Customer Dashboard</h2>
+
+    <div class="dashboard">
+
+        <div class="box">
+            <h2>25+</h2>
+            <p>Bookings This Month</p>
+        </div>
+
+        <div class="box">
+            <h2>150+</h2>
+            <p>Happy Clients</p>
+        </div>
+
+        <div class="box">
+            <h2>98%</h2>
+            <p>Client Satisfaction</p>
+        </div>
+
+        <div class="box">
+            <h2>Luxury</h2>
+            <p>Premium Service Quality</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CUSTOMER REVIWES -->
+
+<section id="reviews">
+      <h2 class="section-title">Customer Reviews</h2>
+
+<div class="testimonial-container">
+
+    <div class="testimonial-slider">
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐</h3>
+            <p>
+                Bridal mehndi design romba azhaga irundhadhu.
+                Everyone appreciated the work.
+            </p>
+            <br>
+            <strong>– Priya S</strong>
+        </div>
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐</h3>
+            <p>
+                Aari embroidery finishing excellent.
+                Delivery on time.
+            </p>
+            <br>
+            <strong>– Keerthana R</strong>
+        </div>
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐</h3>
+            <p>
+                Professional service and affordable pricing.
+                Highly recommended.
+            </p>
+            <br>
+            <strong>– Nivetha M</strong>
+        </div>
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>
+                Wedding package experience was amazing.
+                Worth every rupee.
+            </p>
+            <br>
+            <strong>– Yuvasri </strong>
+        </div>
+
+         <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>
+               I couldn't get mehndi done during my first baby shower, and I always wished I had. Now, for my second baby shower, I finally got it done. I'm so happy, and the design looks really beautiful!"
+            </p>
+            <br>
+            <strong>– Jeyasri S</strong>
+        </div>
+
+        <!-- Duplicate cards for smooth looping -->
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>
+                Bridal mehndi design romba azhaga irundhadhu.
+                Everyone appreciated the work.
+            </p>
+            <br>
+            <strong>– Madhu A</strong>
+        </div>
+
+        <div class="testimonial-card">
+            <h3>⭐⭐⭐⭐⭐</h3>
+            <p>
+                Wedding package experience was amazing.
+                Worth every rupee.
+            </p>
+            <br>
+            <strong>– Harini M</strong>
+        </div>
+
+    </div>
+
+</div>
+```
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact">
+
+        <p><strong>Artist:</strong> Kaviyashree Sivakumar</p>
+
+        <p><strong>Phone:</strong> +91 63690 29091</p>
+
+        <p><strong>Email:</strong> kavimehndi2006@gmail.com</p>
+
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/sign_.of._kavirmd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">@sign_.of._kavirmd </a></p>
+
+        <p><strong>Available for:</strong> Weddings, Engagements, Any Function & Events</p>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Sign_.of_kavirmd | Aari Work Designer& Mehndi Artist
+</footer>
+
+<script>
+
+function booknow() {
+    let message =
+`Hello Kaviyashree,
+
+New Booking Request
+
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+Date: ${date}
+Time: ${time}`;
+    let whatsappURL =
+    `https://wa.me/916369029091?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+
+    document.getElementById("msg").innerHTML =
+    "✔ Booking Confirmed! Redirecting to WhatsApp...";
+}
+
+</script>
+
+</body>
+</html>                                                                                                                                                                        
